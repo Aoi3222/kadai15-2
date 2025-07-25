@@ -1,28 +1,22 @@
 //読み込み完了後に実行する
 $(function() {
-    console.log('jQueryの準備ができました。ページ読み込み完了。');
-    // ボタンがクリックされたときの処理
-    $('#ajaxButton').on('click', function() {
-        
+    $('#btn').on('click', function(){
+
+        let input_no = $("[name='no']").val();
+        let input_score = $("[name='score']").val();
         $.ajax({
-
-            //リクエスト先のURLを設定（作成１)
-            url: ,
-
+            type: 'POST',
+            url: 'api.php',
+            data:{
+                no:input_no,
+                score: input_score
+            }
         }).done(function(data){
-
-            //JSONデータを解析
             let result = JSON.parse(data);
-            //解析データを整形
-            // result.messageとresult.timeを改行で結合（作成２)
-            
-
+            let text = result.no + '\n' + result.score;
             $("#ajax_return").text(text);
-
         }).fail(function(data){
-            //通信が失敗したときの処理
             alert("通信に失敗しました");
         });
- 
     });
 });

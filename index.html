@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Ajax サンプル</title>
+    <title>WebAPI</title>
+    <link rel ="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -10,9 +12,22 @@
     <button id="ajaxButton">サーバーからデータを取得</button>
     <div id="result">
         <p>ここにサーバーからのメッセージと時刻が表示されます。</p>
+    <h3>入力フォーム</h3>
+    <d1>
+        <dt>学籍番号</dt>
+        <dd>
+            <input type="text" name="no">
+        </dd>
+        <dt>点数</dt>
+        <dd>
+            <input type = "text" name = "score">
+        </dd>
+    </d1>
+    <button id="btn">送信</button>
+    <hr>
+    <h3>結果表示</h3>
         <textarea id="ajax_return" rows="5">
         </textarea>
-    </div>
     <script src="js/jquery-3.7.0.min.js"></script>
     <script src="js/app.js"></script>
 </body>
