@@ -13,7 +13,7 @@ $(function() {
             }
         }).done(function(data){
             let result = JSON.parse(data);
-            let text = result.no + '\n' + result.score;
+            let text = result.no +  '\n' + result.score;
             $("#ajax_return").text(text);
         }).fail(function(data){
             alert("通信に失敗しました");
